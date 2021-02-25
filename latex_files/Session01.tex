@@ -1,0 +1,364 @@
+% Session01.tex
+\section{Shell基础和正则表达式}
+
+\subsection{操作环境简介}
+笔者使用的软硬件环境如下所示，其他现代的Linux发行版一般不经过特殊的配置也可以使用。关于如何安装Linux系统，请自行查阅相关资料。
+\begin{lstlisting}[frame=none]
+OS: Manjaro Linux x86_64 
+Host: SuperMicro Server
+Kernel: 5.4.95-1-MANJARO 
+Shell: bash 5.1.0 
+Terminal: /dev/pts/0 
+CPU: 06/55 Engineering Sample (56) @ 3.000GHz 
+Memory: 1714MiB / 128573MiB 
+\end{lstlisting}
+
+对于使用苹果M1芯片或者其他Arm芯片的机器，可能会存在兼容性问题，因而建议在x86机器上进行实验。
+
+\subsection{Bash基本操作}
+打开一个shell后，一般会出现这样的提示符：
+\begin{lstlisting}[frame=none]
+[john@manjaro ~]$ 
+\end{lstlisting}
+提示符分为几个部分，一般来说，会显示用户名，主机名，工作目录以及一个\texttt{\$}或\texttt{\#}。若显示为\texttt{\$}，则当前用户为普通用户，而\texttt{\#}则代表当前用户为特权用户root。
+
+在shell中输入命令，并且按回车键执行。例子如下：
+\begin{lstlisting}[frame=none]
+[john@manjaro ~]$ echo $SHELL
+/bin/bash
+[john@manjaro ~]$ pwd
+/home/john
+[john@manjaro ~]$ ls -hl
+total 12K
+drwxr-xr-x 3 john john 4.0K Feb 21 00:33 Downloads
+drwxr-xr-x 3 john john 4.0K Feb 23 15:52 raid0
+drwxr-xr-x 7 john john 4.0K Feb 25 10:53 SSD
+[john@manjaro ~]$ 
+\end{lstlisting}
+
+使用键盘上的左右键可以移动光标，上下键可以查询到历史命令。使用\texttt{Tab}键可以自动补全命令（不十分智能），使用\texttt{Ctrl-R}键可以搜索历史指令（不十分准确）。
+
+对于bash而言，在输入较长但命令时，如果需要修改命令的开头或者结尾，有一些快捷键会比直接使用方向键更为方便。例如:
+\begin{itemize}
+  \item \texttt{Ctrl-A} 回行首
+  \item \texttt{Ctrl-E} 回行尾
+  \item \texttt{Alt-B} 向前移动一个单词（Alt有关的快捷键在Mac上兼容性不佳）
+  \item \texttt{Alt-F} 向后移动一个单词
+  \item \texttt{Ctrl-U} 删除光标前的所有内容
+  \item \texttt{Ctrl-K} 删除光标后的所有内容
+  \item \texttt{Ctrl-W} 删除光标前的一个单词
+  \item \texttt{Alt-D} 删除光标后的一个单词
+  \item \texttt{Ctrl-\_} 撤销上一次操作
+\end{itemize}
+事实上，对于使用了\texttt{GNU Readline}库的程序（包括大部分shell），上述的这些快捷键大多是适用的。
+
+此外，Bash中还有管道和重定向等操作，这里不再赘述，建议参考扩展阅读中的内容。
+
+\subsection{Linux下常用工具简介}
+Bash中可以使用的命令有两种，一种是系统中的可执行程序，另一种是Bash内置的指令。对于系统中的可执行程序，可以使用\texttt{whereis}指令来查找其位置，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro ~]$ whereis pwd
+pwd: /usr/bin/pwd /usr/include/pwd.h /usr/share/man/man1/pwd.1p.gz /usr/share/man/man1/pwd.1.gz
+\end{lstlisting}
+而对于内置命令，如\texttt{cd}等，则不存在与之对应等可执行文件，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro ~]$ whereis cd
+cd: /usr/share/man/man1/cd.1p.gz
+\end{lstlisting}
+想要查看系统中等所有指令，可以使用\texttt{compgen}这个内置命令，其后的参数有\texttt{-cabkA}，功能不同，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro ~]$ compgen -c
+cp
+df
+egrep
+fgrep
+free
+grep
+ls
+more
+np
+...
+\end{lstlisting}
+经常会使用的工具被一些同学编写成了一个rap。
+\begin{itemize}
+  \item \textit{A是awk,跑起来慢如蜗牛,}
+  \item \textit{B是biff,自动查收新电邮。}
+  \item \textit{C是cc,地球黑客都知道,}
+  \item \textit{D是dd,什么文件全能搞。}
+  \item \textit{E是emacs,支持许多组合键,}
+  \item \textit{F是fsck,将B树进行重建。}
+  \item \textit{G是grep,堪称代码名侦探,}
+  \item \textit{H是halt,注意电源不会断。}
+  \item \textit{I是indent,时不时引发圣战,}
+  \item \textit{J是join,简直毫无存在感。}
+  \item \textit{K是kill,你也能做个boss,}
+  \item \textit{L是lex,可惜不兼容DOS。}
+  \item \textit{M是more,后被less取代，}
+  \item \textit{N是nice,但没有那么和蔼。}
+  \item \textit{0是od,二进制阅读方便,}
+  \item \textit{P是passwd,字符串读取两遍。}
+  \item \textit{Q是quota,伯克利系统特色,}
+  \item \textit{R是reboot,重启操作系统。}
+  \item \textit{S是ssh,连接远程电脑,}
+  \item \textit{T是tar,压缩包打包好。}
+  \item \textit{∪是uniq,sort之后再整理,}
+  \item \textit{V是vi,退出程序不容易。}
+  \item \textit{W是whoami,立刻报上你大名,}
+  \item \textit{X .....就是X,历史上不少批评。}
+  \item \textit{Y是yes,唯一印象会刷屏,}
+  \item \textit{Z是zcat,解压文本它能行。}
+\end{itemize}
+关于这些工具的用途和历史，有兴趣可以网上查阅资料，或者使用\texttt{man}指令查看系统中的手册。
+
+\subsection{正则表达式}
+正则表达式（regex）是用于匹配字符串的一个pattern。很多程序都不同程度地支持正则表达式，如\texttt{vim}，\texttt{emacs}，\texttt{grep}，\texttt{sed}，\texttt{awk}以及各类编译器解释器等。下面以\texttt{grep}系列为例介绍正则表达式的使用。注意，使用正则表达式时，最好将pattern用引号包住，以免被shell转义。
+
+首先，生成我们用于演示正则表达式的文件：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ compgen -c > foobar.txt
+[john@manjaro Session01]$ head foobar.txt 
+cp
+df
+egrep
+fgrep
+free
+grep
+hg
+ll
+ls
+more
+\end{lstlisting}
+
+\subsubsection{直接匹配}
+一个常规的字符串也是正则表达式，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep rep foobar.txt 
+egrep
+fgrep
+grep
+gawklibpath_prepend
+gawkpath_prepend
+zipgrep
+pgrep
+...
+\end{lstlisting}
+\subsubsection{通配符}
+在正则表达式中，字符"\texttt{.}"可以匹配任意的字符，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep .g.ep foobar.txt 
+egrep
+fgrep
+zipgrep
+pgrep
+xzegrep
+...
+\end{lstlisting}
+除了字符"\texttt{.}"外，被"\texttt{[ ]}"括起来的字符也是通配符，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep [ef]grep foobar.txt 
+egrep
+fgrep
+xzegrep
+...
+\end{lstlisting}
+若把一些字符用"\texttt{[\^{} ]}"括起来，则表示匹配不含这些字符的pattern，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep [^ef]grep foobar.txt 
+zipgrep
+pgrep
+lzgrep
+xzgrep
+zgrep
+...
+\end{lstlisting}
+使用"\texttt{[ ]}"的方式比较灵活多变，比如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep [a-zA-Z]grep foobar.txt 
+egrep
+fgrep
+zipgrep
+pgrep
+xzegrep
+...
+[john@manjaro Session01]$ grep [[:alpha:]]grep foobar.txt 
+egrep
+fgrep
+zipgrep
+pgrep
+xzegrep
+...
+\end{lstlisting}
+此外还有\texttt{[:lower:]}，\texttt{[:upper:]}，\texttt{[:digit:]}，\texttt{[:alnum:]}，\texttt{[:punct:]}，\texttt{[:space:]}等。
+
+\subsubsection{定位行首行尾}
+如果要在行首或行尾进行匹配，可以使用"\texttt{\^{}}"和"\texttt{\$}"，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep ^[a-z]grep foobar.txt 
+egrep
+fgrep
+pgrep
+egrep
+zgrep
+fgrep
+[john@manjaro Session01]$ grep pc.$ foobar.txt 
+setpci
+lspci
+ipcs
+grpck
+dhcpcd
+\end{lstlisting}
+注意与上面的"\texttt{[\^{} ]}"相区别。
+\subsubsection{重复字符}
+若要匹配若干重复的字符，可以使用"\texttt{*}"，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep ^l*s foobar.txt 
+ls
+select
+set
+shift
+shopt
+...
+\end{lstlisting}
+注意，0次也会被匹配到。也可以利用"\texttt{\{n,m\}}"指定重复字符的次数，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ egrep ^l\{1,\} foobar.txt 
+ll
+ls
+let
+local
+logout
+...
+\end{lstlisting}
+\subsubsection{子表达式}
+将表达式用"\texttt{()}"括起来，程序就将其当作一个字符处理，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ egrep ^\(ls\)\{1,\} foobar.txt 
+ls
+lslocks
+lsns
+lsoptdepends
+...
+lscp
+lsb_release
+lslslslslsls
+\end{lstlisting}
+\subsubsection{回溯引用}
+回溯引用是指模式的后半部分引用在前半部分中定义的子表达式。先准备测试用的素材：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ cat <<EOF>>foobar.txt 
+> <body>
+<h1>Welcome to my page</H1>
+Content is divided into twosections:<br>
+<h2>Introduction</h2>
+Information about me.
+<H2>Hobby</H2>
+Information about my hobby.
+<h2>This is invalid HTML</h3>
+</body>
+> EOF
+\end{lstlisting}
+如果不使用回溯引用，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ egrep '<[hH][1-6]>.*?</[hH][1-6]>' foobar.txt 
+<h1>Welcome to my page</H1>
+<h2>Introduction</h2>
+<H2>Hobby</H2>
+<h2>This is invalid HTML</h3>
+\end{lstlisting}
+注意到最后一行的匹配两个标签不相符合，而使用"\texttt{$\backslash$n}"来代替上n次被匹配到的字符串，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ egrep '<[hH]([1-6])>.*?</[hH]\1>' foobar.txt 
+<h1>Welcome to my page</H1>
+<h2>Introduction</h2>
+<H2>Hobby</H2>
+\end{lstlisting}
+则可以达到预期的效果。
+\subsubsection{扩展的正则表达式}
+将表达式用"\texttt{|}"连接，表示匹配前一个表达式或后一个表达式，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ egrep '^(ls|su).*' foobar.txt 
+ls
+suspend
+lslocks
+lsns
+lsoptdepends
+ls
+sulogin
+lsinitcpio
+...
+\end{lstlisting}
+一些符号在扩展的正则表达式中可以作为重复次数的缩写，比如"\texttt{*}"表示比配0到无穷次，"\texttt{+}"1到无穷次，以及"\texttt{?}"表示匹配0到1次，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ egrep ls.+ foobar.txt 
+else
+false
+lslocks
+lsns
+lsoptdepends
+gnutls-cli
+nl-cls-add
+...
+\end{lstlisting}
+\subsubsection{非正常字符}
+有时会匹配一些非正常字符，例如：
+\begin{lstlisting}[frame=none]
+\cx	匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 'c' 字符。
+\f	匹配一个换页符。等价于 \x0c 和 \cL。
+\n	匹配一个换行符。等价于 \x0a 和 \cJ。
+\r	匹配一个回车符。等价于 \x0d 和 \cM。
+\s	匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。注意 Unicode 正则表达式会匹配全角空格符。
+\S	匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。
+\t	匹配一个制表符。等价于 \x09 和 \cI。
+\v	匹配一个垂直制表符。等价于 \x0b 和 \cK。
+\w  等价于[A-Za-z0-9_].
+\W  等价于[^A-Za-z0-9_].
+\b	匹配一个单词边界，即字与空格间的位置。
+\B	非单词边界匹配。
+\end{lstlisting}
+\subsubsection{用正则表达式处理fasta文件}
+首先，准备实验用的文件：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/Escherichia_coli/reference/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_cds_from_genomic.fna.gz && gzip -d GCF_000005845.2_ASM584v2_cds_from_genomic.fna.gz
+\end{lstlisting}
+浏览文件的开头，对文件作一个大致的了解：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ head GCF_000005845.2_ASM584v2_cds_from_genomic.fna 
+>lcl|NC_000913.3_cds_NP_414542.1_1 [gene=thrL] [locus_tag=b0001] [db_xref=UniProtKB/Swiss-Prot:P0AD86] [protein=thr operon leader peptide] [protein_id=NP_414542.1] [location=190..255] [gbkey=CDS]
+ATGAAACGCATTAGCACCACCATTACCACCACCATCACCATTACCACAGGTAACG...
+\end{lstlisting}
+统计序列个数，将"\texttt{grep}"与"\texttt{wc}"连用，在这个例子中，就是大肠杆菌中CDS的数量：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep "^>" GCF_000005845.2_ASM584v2_cds_from_genomic.fna |wc -l
+4357
+\end{lstlisting}
+统计核酸总数，同样将"\texttt{grep}"与"\texttt{wc}"连用，注意到扣除换行符，这里使用了多数linux发行版自带的计算器"\texttt{bc}"：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ echo \
+$(grep "^[^>]" GCF_000005845.2_ASM584v2_cds_from_genomic.fna |wc -c) - \
+$(grep "^[^>]" GCF_000005845.2_ASM584v2_cds_from_genomic.fna |wc -l)|bc
+4091782
+\end{lstlisting}
+或者使用"\texttt{grep -o}"，例如：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep "^[^>]" GCF_000005845.2_ASM584v2_cds_from_genomic.fna |grep -o "[ATCG]"| wc -l
+4091782
+\end{lstlisting}
+例如我们要寻找其中对PAM序列（NGG，CRISPR/CAS9操作必备），则可以进行如下操作：
+\begin{lstlisting}[frame=none]
+[john@manjaro Session01]$ grep -b "[ATCG]GG" GCF_000005845.2_ASM584v2_cds_from_genomic.fna
+\end{lstlisting}
+
+\subsection*{扩展阅读}
+\begin{itemize}
+  \item 你所不知的 GNU Readline | Linux 中国 - 知乎\\
+  \url{https://zhuanlan.zhihu.com/p/264772139}
+  \item 正则表达式 – 语法 | 菜鸟教程 - RUNOOB.COM\\
+  \url{https://www.runoob.com/regexp/regexp-syntax.html}
+  \item Vim入门基础 - 简书\\
+  \url{https://www.jianshu.com/p/bcbe916f97e1}
+  \item linux shell 管道命令(pipe)使用及与shell重定向区别\\
+  \url{https://www.cnblogs.com/chengmo/archive/2010/10/21/1856577.html}
+\end{itemize}
+\begin{lstlisting}[frame=none]
+
+\end{lstlisting}
