@@ -1,449 +1,0 @@
-Script started on 2021-02-24 20:43:50+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="173" LINES="46"]
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls
-[?2004l]  foo1  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -l
-[?2004ltotal 84
--rw-r--r-- 1 john john     0 Feb 24 20:26 ]
--rw-r--r-- 1 john john   230 Feb 24 20:16 foo1
--rw-r--r-- 1 john john 45001 Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john 21691 Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john     0 Feb 24 20:43 session01-2.script
--rw-r--r-- 1 john john     0 Feb 24 20:43 session01-2.time
--rw-r--r-- 1 john john   487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m rm ]
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hl
-[?2004ltotal 84K
--rw-r--r-- 1 john john 230 Feb 24 20:16 foo1
--rw-r--r-- 1 john john 44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john 22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john   0 Feb 24 20:43 session01-2.script
--rw-r--r-- 1 john john   0 Feb 24 20:43 session01-2.time
--rw-r--r-- 1 john john 487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -d
-[?2004l[0m[01;34m.[0m
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mkdir filet[Ks[K[K[K[K[Kfoobar
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -d
-[?2004l[0m[01;34m.[0m
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls
-[?2004lfoo1  [0m[01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -t
-[?2004l[0m[01;34mfoobar[0m  session01-2.script  session01-2.time  session01-1.script  session01-1.time  test.fasta  foo1
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -R
-[?2004l.:
-foo1  [0m[01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-
-./foobar:
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -a
-[?2004l[0m[01;34m.[0m  [01;34m..[0m  foo1  [01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hlaR
-[?2004l.:
-total 96K
-drwxr-xr-x 3 john john 4.0K Feb 24 20:44 [0m[01;34m.[0m
-drwxr-xr-x 4 john john 4.0K Feb 24 20:35 [01;34m..[0m
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [01;34mfoobar[0m
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john    0 Feb 24 20:43 session01-2.script
--rw-r--r-- 1 john john    0 Feb 24 20:43 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-
-./foobar:
-total 8.0K
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [01;34m.[0m
-drwxr-xr-x 3 john john 4.0K Feb 24 20:44 [01;34m..[0m
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hlaRf[Kd
-[?2004ldrwxr-xr-x 3 john john 4.0K Feb 24 20:44 [0m[01;34m.[0m
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -lrt
-[?2004ltotal 92
--rw-r--r-- 1 john john   230 Feb 24 20:16 foo1
--rw-r--r-- 1 john john   487 Feb 24 20:25 test.fasta
--rw-r--r-- 1 john john 21691 Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 45001 Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john     0 Feb 24 20:43 session01-2.time
-drwxr-xr-x 2 john john  4096 Feb 24 20:44 [0m[01;34mfoobar[0m
--rw-r--r-- 1 john john  4096 Feb 24 20:45 session01-2.script
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mkdir dir1
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m rm dir1
-[?2004lrm: cannot remove 'dir1': Is a directory
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m rm -r dir1
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mkdir dir1
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mv dir1 dir2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hl
-[?2004ltotal 96K
-drwxr-xr-x 2 john john 4.0K Feb 24 20:45 [0m[01;34mdir2[0m
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [01;34mfoobar[0m
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 4.0K Feb 24 20:45 session01-2.script
--rw-r--r-- 1 john john    0 Feb 24 20:43 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mkdir dir1
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mv dir1 dir2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hlR
-[?2004l.:
-total 96K
-drwxr-xr-x 3 john john 4.0K Feb 24 20:46 [0m[01;34mdir2[0m
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [01;34mfoobar[0m
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 4.0K Feb 24 20:45 session01-2.script
--rw-r--r-- 1 john john    0 Feb 24 20:43 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-
-./dir2:
-total 4.0K
-drwxr-xr-x 2 john john 4.0K Feb 24 20:46 [01;34mdir1[0m
-
-./dir2/dir1:
-total 0
-
-./foobar:
-total 0
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m rm -r dir2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls
-[?2004lfoo1  [0m[01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mkdir dir1 [K
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mkdir dir2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cp dir1 dir2
-[?2004lcp: -r not specified; omitting directory 'dir1'
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cp dir1 dir2[1@-[1@r[1@ 
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -R
-[?2004l.:
-[0m[01;34mdir1[0m  [01;34mdir2[0m  foo1  [01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-
-./dir1:
-
-./dir2:
-[01;34mdir1[0m
-
-./dir2/dir1:
-
-./foobar:
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -Rcp -r dir1 dir2[3P[C[C[C[C[C[C[C[C[C[2Pmkdir[C[C[C[C[C12[2@cp dir1[C[C[C[C[C[2Pmkdir[C[C[C[C[C1ls[Krm -r dir2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m mkdir df[Kir1
-[?2004lmkdir: cannot create directory ‘dir1’: File exists
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cp dir1/-dir1/rdir1/ dir1/[C[C[C[C[C[K dir2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hlA
-[?2004ltotal 108K
-drwxr-xr-x 2 john john 4.0K Feb 24 20:46 [0m[01;34mdir1[0m
-drwxr-xr-x 2 john john 4.0K Feb 24 20:47 [01;34mdir2[0m
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [01;34mfoobar[0m
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 8.0K Feb 24 20:46 session01-2.script
--rw-r--r-- 1 john john 4.0K Feb 24 20:46 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hlAr
-[?2004ltotal 108K
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
--rw-r--r-- 1 john john 4.0K Feb 24 20:46 session01-2.time
--rw-r--r-- 1 john john 8.0K Feb 24 20:46 session01-2.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [0m[01;34mfoobar[0m
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
-drwxr-xr-x 2 john john 4.0K Feb 24 20:47 [01;34mdir2[0m
-drwxr-xr-x 2 john john 4.0K Feb 24 20:46 [01;34mdir1[0m
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hlAr[KR
-[?2004l.:
-total 108K
-drwxr-xr-x 2 john john 4.0K Feb 24 20:46 [0m[01;34mdir1[0m
-drwxr-xr-x 2 john john 4.0K Feb 24 20:47 [01;34mdir2[0m
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [01;34mfoobar[0m
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 8.0K Feb 24 20:46 session01-2.script
--rw-r--r-- 1 john john 4.0K Feb 24 20:46 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-
-./dir1:
-total 0
-
-./dir2:
-total 0
-
-./foobar:
-total 0
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m rm dir[K[K[K-r dir*
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls
-[?2004lfoo1  [0m[01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m touch foio[K[K2[K02[K[Ko2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls
-[?2004lfoo1  foo2  [0m[01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cp df[K[Kfoo2 foo3
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls
-[?2004lfoo1  foo2  foo3  [0m[01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m rm foo3
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m rm foo3-foo3tfoo3[1Pfoo3rfoo3 foo3[1Pfoo3[1Pfoo3ifoo3 foo3[C[C[C[C[K2
-[?2004lrm: remove regular empty file 'foo2'? n
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls
-[?2004lfoo1  foo2  [0m[01;34mfoobar[0m  session01-1.script  session01-1.time  session01-2.script  session01-2.time  test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hl
-[?2004ltotal 104K
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
--rw-r--r-- 1 john john    0 Feb 24 20:47 foo2
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [0m[01;34mfoobar[0m
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john  12K Feb 24 20:47 session01-2.script
--rw-r--r-- 1 john john 4.0K Feb 24 20:46 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m chmod u+r [K,o=w[Krwx[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgroups jwj[K[K[K$USER
-[?2004lwheel audio input lp storage video sys network power docker john
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m chmod u+x,g+rw,o=w[Krw foo2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -l
-[?2004ltotal 104
--rw-r--r-- 1 john john   230 Feb 24 20:16 foo1
--rwxrw-rw- 1 john john     0 Feb 24 20:47 [0m[01;32mfoo2[0m
-drwxr-xr-x 2 john john  4096 Feb 24 20:44 [01;34mfoobar[0m
--rw-r--r-- 1 john john 45001 Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john 21691 Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 12288 Feb 24 20:47 session01-2.script
--rw-r--r-- 1 john john  4096 Feb 24 20:46 session01-2.time
--rw-r--r-- 1 john john   487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m chmod y[K117 foo2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ll[Ks -l
-[?2004ltotal 108
--rw-r--r-- 1 john john   230 Feb 24 20:16 foo1
----x--xrwx 1 john john     0 Feb 24 20:47 [0m[01;32mfoo2[0m
-drwxr-xr-x 2 john john  4096 Feb 24 20:44 [01;34mfoobar[0m
--rw-r--r-- 1 john john 45001 Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john 21691 Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 12288 Feb 24 20:47 session01-2.script
--rw-r--r-- 1 john john  8192 Feb 24 20:49 session01-2.time
--rw-r--r-- 1 john john   487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -lchmod 117 foo2[C[C[1P[1P[1@6[1@6[C[1P foo26 foo2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m chmod 666 foo2[9Pls -l
-[?2004ltotal 112
--rw-r--r-- 1 john john   230 Feb 24 20:16 foo1
--rw-rw-rw- 1 john john     0 Feb 24 20:47 foo2
-drwxr-xr-x 2 john john  4096 Feb 24 20:44 [0m[01;34mfoobar[0m
--rw-r--r-- 1 john john 45001 Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john 21691 Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 16384 Feb 24 20:50 session01-2.script
--rw-r--r-- 1 john john  8192 Feb 24 20:49 session01-2.time
--rw-r--r-- 1 john john   487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -lchmod 666 foo2[C[1P foo2[1@5[C[1P foo2[1@5
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m chmod 556 foo2[9Pls -l
-[?2004ltotal 112
--rw-r--r-- 1 john john   230 Feb 24 20:16 foo1
--r-xr-xrw- 1 john john     0 Feb 24 20:47 [0m[01;32mfoo2[0m
-drwxr-xr-x 2 john john  4096 Feb 24 20:44 [01;34mfoobar[0m
--rw-r--r-- 1 john john 45001 Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john 21691 Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 16384 Feb 24 20:50 session01-2.script
--rw-r--r-- 1 john john  8192 Feb 24 20:49 session01-2.time
--rw-r--r-- 1 john john   487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -lchmod 556 foo2[1P[C[1@5[C[1P[1P[1@4[1@4
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m chmod 446 foo2[9Pls -l
-[?2004ltotal 112
--rw-r--r-- 1 john john   230 Feb 24 20:16 foo1
--r--r--rw- 1 john john     0 Feb 24 20:47 foo2
-drwxr-xr-x 2 john john  4096 Feb 24 20:44 [0m[01;34mfoobar[0m
--rw-r--r-- 1 john john 45001 Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john 21691 Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john 16384 Feb 24 20:50 session01-2.script
--rw-r--r-- 1 john john  8192 Feb 24 20:49 session01-2.time
--rw-r--r-- 1 john john   487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls >foo2
-[?2004lbash: foo2: Permission denied
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls >foo2[3P-lchmod 446 foo2[C[1P foo2[1P foo2[1P foo26 foo24 foo24 foo2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m chmod 644 foo2[6Pls >foo2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat foo
-[?2004lcat: foo: No such file or directory
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat foo2
-[?2004lfoo1
-foo2
-foobar
-session01-1.script
-session01-1.time
-session01-2.script
-session01-2.time
-test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat foo2[Kls >foo2->foo2h>foo2l>foo2 >foo2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -hl >foo2[4Pcat foo2
-[?2004ltotal 112K
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
--rw-r--r-- 1 john john    0 Feb 24 20:51 foo2
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 foobar
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john  16K Feb 24 20:50 session01-2.script
--rw-r--r-- 1 john john 8.0K Feb 24 20:49 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat foo2ls -hl >foo2[C[C[1P >foo2[1P >foo2R >foo2[C[C>foo2
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -R >>foo2[4Pcat foo2
-[?2004ltotal 112K
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
--rw-r--r-- 1 john john    0 Feb 24 20:51 foo2
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 foobar
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john  16K Feb 24 20:50 session01-2.script
--rw-r--r-- 1 john john 8.0K Feb 24 20:49 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-.:
-foo1
-foo2
-foobar
-session01-1.script
-session01-1.time
-session01-2.script
-session01-2.time
-test.fasta
-
-./foobar:
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m who
-[?2004ljohn     pts/0        2021-02-24 14:39 (192.168.0.215)
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m who > foo3
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat foo3 
-[?2004ljohn     pts/0        2021-02-24 14:39 (192.168.0.215)
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls > foo3
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls > foo3[Kcat foo3|sort
-[?2004lfoo1
-foo2
-foo3
-foobar
-session01-1.script
-session01-1.time
-session01-2.script
-session01-2.time
-test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat foo3|sort[4Pls > foo3[1@-[1@t[1@ 
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls -t > foo3cat foo3|sort
-[?2004lfoo1
-foo2
-foo3
-foobar
-session01-1.script
-session01-1.time
-session01-2.script
-session01-2.time
-test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat foo3|sort[K[K[K[K[K
-[?2004lfoo3
-foo2
-session01-2.script
-session01-2.time
-foobar
-session01-1.script
-session01-1.time
-test.fasta
-foo1
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m sort<foo3>foo4
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat foo4
-[?2004lfoo1
-foo2
-foo3
-foobar
-session01-1.script
-session01-1.time
-session01-2.script
-session01-2.time
-test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls foo[12]
-[?2004lfoo1  foo2
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls foo[1-4]
-[?2004lfoo1  foo2  foo3  foo4
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ls [fm]*
-[?2004lfoo1  foo2  foo3  foo4
-
-foobar:
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m a;[Klias ll=ls -l[K[K[K[K[K''l's'-'h'l'
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ll
-[?2004lbash: ls-hl: command not found
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m llalias ll='ls-hl' -hl'
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ll
-[?2004ltotal 140K
--rw-r--r-- 1 john john  230 Feb 24 20:16 foo1
--rw-r--r-- 1 john john  553 Feb 24 20:51 foo2
--rw-r--r-- 1 john john  105 Feb 24 20:52 foo3
--rw-r--r-- 1 john john  105 Feb 24 20:53 foo4
-drwxr-xr-x 2 john john 4.0K Feb 24 20:44 [0m[01;34mfoobar[0m
--rw-r--r-- 1 john john  44K Feb 24 20:30 session01-1.script
--rw-r--r-- 1 john john  22K Feb 24 20:30 session01-1.time
--rw-r--r-- 1 john john  24K Feb 24 20:53 session01-2.script
--rw-r--r-- 1 john john  12K Feb 24 20:53 session01-2.time
--rw-r--r-- 1 john john  487 Feb 24 20:25 test.fasta
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m [7munalias ll[27munalias ll\[K
-[?2004l]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m ll
-[?2004lbash: ll: command not found
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m tr s z
-[?2004lsssssssaaaassss
-zzzzzzzaaaazzzz
-^C
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m tr so zx
-[?2004lsooosososososssss
-zxxxzxzxzxzxzzzzz
-^C
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m tr a-z A-Z
-[?2004lfjsghiergbhrGFGHN
-FJSGHIERGBHRGFGHN
-^C
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m tr -d a-c
-[?2004labcdefg
-defg
-^C
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m tr ATCG TAGC < test.fasta 
-[?2004l>ENSMUSC00000020122|ENSMUSA00000138518
-GGGAGGATAGTACGACAGTCACATAGAGATTTATCGTGAGAGTTGGGGGCACTTGAACCA
-ATAATTTTTGTACGGGTTTCAGACCCTCGGTCCCGACGTCCCTTTATGGTGTCGGAGTCA
-AGTAGTTTTGTCAAGTAACGGGTTTTACAAGAGTCGACGTCGAAAGTACTCCATTGAGGT
-CCCGGGTGGACAAGAGACCA
->ENSMUSC00000020122|ENSMUSA00000125984
-CTCAGTCCAACTTCGACGGGACTTGTGATGTCTCTTCTCTCCGGAACCACAGGACAACAG
-AGGTCTTGGGGTTATACAGAACACTTCCCGTGTGTTGGGGAGTTTCCCCACAGTGAAGAA
-GACTAGTGAAAACAATGACAAATGATTGACTAGGATACTTAGTGACACAGAAGAGTCTCC
-GGCACTTGGTGCAGACGTTA
-
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m cat test.fasta 
-[?2004l>ENSMUSG00000020122|ENSMUST00000138518
-CCCTCCTATCATGCTGTCAGTGTATCTCTAAATAGCACTCTCAACCCCCGTGAACTTGGT
-TATTAAAAACATGCCCAAAGTCTGGGAGCCAGGGCTGCAGGGAAATACCACAGCCTCAGT
-TCATCAAAACAGTTCATTGCCCAAAATGTTCTCAGCTGCAGCTTTCATGAGGTAACTCCA
-GGGCCCACCTGTTCTCTGGT
->ENSMUSG00000020122|ENSMUST00000125984
-GAGTCAGGTTGAAGCTGCCCTGAACACTACAGAGAAGAGAGGCCTTGGTGTCCTGTTGTC
-TCCAGAACCCCAATATGTCTTGTGAAGGGCACACAACCCCTCAAAGGGGTGTCACTTCTT
-CTGATCACTTTTGTTACTGTTTACTAACTGATCCTATGAATCACTGTGTCTTCTCAGAGG
-CCGTGAACCACGTCTGCAAT
-
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m wc -h
-[?2004lwc: invalid option -- 'h'
-Try 'wc --help' for more information.
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m wc -h[K-help
-[?2004lUsage: wc [OPTION]... [FILE]...
-  or:  wc [OPTION]... --files0-from=F
-Print newline, word, and byte counts for each FILE, and a total line if
-more than one FILE is specified.  A word is a non-zero-length sequence of
-characters delimited by white space.
-
-With no FILE, or when FILE is -, read standard input.
-
-The options below may be used to select which counts are printed, always in
-the following order: newline, word, character, byte, maximum line length.
-  -c, --bytes            print the byte counts
-  -m, --chars            print the character counts
-  -l, --lines            print the newline counts
-      --files0-from=F    read input from the files specified by
-                           NUL-terminated names in file F;
-                           If F is - then read names from standard input
-  -L, --max-line-length  print the maximum display width
-  -w, --words            print the word counts
-      --help     display this help and exit
-      --version  output version information and exit
-
-GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
-Full documentation <https://www.gnu.org/software/coreutils/wc>
-or available locally via: info '(coreutils) wc invocation'
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m [K[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m [K[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m (reverse-i-search)`': [Kd': tr -[7md[27m a-co': su[7mdo[27m pacman -Sy screenc': [7mdoc[27mker start be4c5e0a442c[1@k': [7mdock[27m[1@e': [7mdocke[27m[1@r': [7mdocker[27m[2P[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m docker
-[?2004lbe4c5e0a442c
-]0;john@manjaro:~/SSD/Playground/ModernBiocomputingEnv2021/Session01[?2004h[01;32m[john@manjaro[01;37m Session01[01;32m]$[00m [?2004l
-exit
-
-Script done on 2021-02-24 21:08:51+08:00 [COMMAND_EXIT_CODE="0"]
